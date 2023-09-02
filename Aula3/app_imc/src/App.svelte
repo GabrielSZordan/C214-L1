@@ -9,6 +9,7 @@
 	function calcularIMC() {
 	  if (peso > 0 && altura > 0) {
 		imc = (peso / Math.pow(altura, 2)).toFixed(2);
+		regrasIMC(imc);
 	  } else {
 		imc = 0;
 	  }
@@ -50,10 +51,9 @@
 	</label>
 	{#if imc > 0}
 	  <p>Seu IMC é {imc}</p>
+	  <p>{classificacao}</p>
 	{/if}
-	{#if classificacao > 0}
-		<p>Situação atual é {classificacao}</p>
-	{/if}
+	
   </main>
   
   <style>
